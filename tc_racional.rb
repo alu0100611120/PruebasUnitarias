@@ -29,6 +29,13 @@ class Test_Fraccion < Test::Unit::TestCase
 		end
 	end
 	def test_suma
+		#Comprobamos la suma con los valores estandar
+		result = @a.suma(@b)
+		assert result.numerator == 3 and result.dem == 4
+		#Comprobamos la suma con numerador 0
+		@a.numerator = 0
+		result = @a.suma(@b)
+		assert result.numerator == 1 and result.dem == 4
 	end
 	def test_resta
 	end
