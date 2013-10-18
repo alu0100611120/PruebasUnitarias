@@ -14,10 +14,9 @@ class Fraccion
 		raise ArgumentError, 'El denominador no puede ser cero' unless denominador != 0
 		#Calculamos el máximo común divisor
 		mcd = gcd(numerador, denominador)
-		puts mcd	
 		#Asignamos los valores de la fracción irreducible
-		@numerator = (numerador)
-		@dem = (denominador)
+		@numerator = (numerador/mcd)
+		@dem = (denominador/mcd)
 	end
 
 	def to_s #Devuelve la fracción convertida a string
@@ -40,10 +39,5 @@ class Fraccion
 	def division(ob) #Devuelve un nuevo obj con el resultado de la division
 		return Fraccion.new((@numerator * ob.dem) , (@dem * ob.numerator))
 	end
-	#Código de testeo
-a = Fraccion.new(1,2)
-b = Fraccion.new(1,4)
-	#c = a.suma(b)
-	#c.to_s
 end
 
