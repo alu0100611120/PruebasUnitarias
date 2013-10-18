@@ -10,4 +10,4 @@ def gcd(u, v)
   end
 end
 
-puts gcd(6,3)
+
