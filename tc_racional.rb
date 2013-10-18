@@ -38,10 +38,34 @@ class Test_Fraccion < Test::Unit::TestCase
 		assert result.numerator == 1 and result.dem == 4
 	end
 	def test_resta
+		#Comprobamos la resta con los valores estandar
+                result = @a.resta(@b)
+                assert result.numerator == 1 and result.dem == 4
+                #Comprobamos la resta con numerador 0
+                @b.numerator = 0
+                result = @a.resta(@b)
+                assert result.numerator == 1 and result.dem == 2
+
 	end
-	def test_multiplicacion
+	def test_producto
+                #Comprobamos el producto con los valores estandar
+                result = @a.producto(@b)
+                assert result.numerator == 1 and result.dem == 8
+                #Comprobamos el producto con numerador 0
+                @a.numerator = 0
+                result = @a.producto(@b)
+                assert result.numerator == 0 and result.dem == 8
+
 	end
 	def test_division
+		#Comprobamos la division con los valores estandar
+                result = @a.division(@b)
+                assert result.numerator == 2 and result.dem == 1
+		#Comprobamos la division con numerador 0
+		@a.numerator = 0
+		result = @a.division(@b)
+		assert result.numerator == 0 and result.dem == 2
+
 	end
 
 
